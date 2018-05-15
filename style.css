@@ -1,0 +1,565 @@
+*:focus { 
+    background-color: transparent;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    height: 100%;
+}
+
+header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 15% 1fr 15%;
+    grid-template-columns: 20% 1fr 20%;
+    -ms-grid-rows: 1fr;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: fixed;
+    top: 0;
+    background: #fff;
+    height: 65px;
+    width: 100%;
+    z-index: 150;
+}
+
+#emptyitem { /*to fill space that will be occupied by HOME button on other pages*/
+    -ms-grid-column: 1;
+}
+
+#secondItem {
+    -ms-grid-column: 2;
+    grid-column: 2;
+    -ms-grid-row: 1;
+    justify-self: center;
+    -ms-grid-column-align: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+
+}
+
+#brand {
+    
+    text-decoration: none;
+}
+
+.brandH1 {
+    text-transform: uppercase;
+    font-family: 'Paytone One', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+    color: #000;
+}
+
+#menuContainer {
+    -ms-grid-column: 3;
+    justify-self: center;
+    -ms-grid-row: 1;
+}
+
+
+#hiddenMenu { /* appears with transition when javascript applies .openMenu class */
+    background: rgba(255,255,255,0.9);
+    position: fixed;
+    top: 65px;
+    right: 0;
+    z-index: 41;
+    text-align: center;
+    height: 100%;
+    width: 0;
+    overflow-x: hidden;
+    -webkit-transition: 0.6s;
+    transition: 0.6s;    
+}
+
+.openMenu {
+    width: 300px!important;
+}
+
+#menuList {
+    list-style: none;
+    padding:0;
+}
+
+#menuList a {
+    text-decoration: none;
+}
+
+.navItem {
+    display: block;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.25rem;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+#banner {
+    overflow: hidden;
+    position: relative;
+    margin-top: 65px;
+    padding-bottom: 0;
+    height: 600px;
+    width: 100%;
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(150px, 1fr); /* some experimenting with minmax! */
+    -ms-grid-rows: 1fr 1fr 1fr;
+    grid-auto-flow: row dense;
+}
+
+#banner::before { /* transparent overlay to create subtle black-and-white effect */
+    content: "";
+    height: 600px;
+    z-index: 20;
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  #banner::after { /* text on top of banner grid */
+      content: "Houston's Premier Hair Salon";
+      font-family: 'Raleway', sans-serif;
+      font-size: 6rem;
+      color: #fff;
+      z-index: 40;
+      background-color: transparent;
+      /* display: inline-block; */
+      position: absolute;
+      grid-column: -1 / 1;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 5;
+      grid-row: 2 / span 2;
+      -ms-grid-row: 2;
+      -ms-grid-row-span: 2;
+      justify-self: center;
+      -webkit-animation: fadeIn ease-in 1s,
+                         slideUp ease-in 1s;
+              animation: fadeIn ease-in 1s,
+                         slideUp ease-in 1s;
+
+  }
+
+.item {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    grid-column-start: auto;
+    grid-row-start: auto;
+    background: url('images/hair1.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.two {
+    background-image: url('images/hair2.jpg');
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+}
+
+.three {
+    background-image: url('images/hair3.jpg');
+    -ms-grid-column: 3;
+    -ms-grid-row: 1;
+}
+
+.four {
+    background-image: url('images/hair4.jpg');
+    -ms-grid-column: 4;
+    -ms-grid-row: 1;
+}
+
+.five {
+    background-image: url('images/hair5.jpg');
+    -ms-grid-column: 5;
+    -ms-grid-row: 1;
+}
+
+.six {
+    background-image: url('images/hair6.jpg');
+    -ms-grid-column: 1;
+    -ms-grid-row: 2;
+}
+
+.seven {
+    background-image: url('images/hair7.jpg');
+    -ms-grid-column: 3;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+}
+
+.eight {
+    background-image: url('images/hair8.jpg');
+    -ms-grid-column: 4;
+    -ms-grid-row: 2;
+}
+
+.nine {
+    background-image: url('images/hair9.jpg');
+    -ms-grid-column: 5;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+}
+
+.ten {
+    background-image: url('images/hair10.jpg');
+    -ms-grid-column: 1;
+    -ms-grid-row: 3;
+}
+
+.eleven {
+    background-image: url('images/hair11.jpg');
+    -ms-grid-column: 2;
+    -ms-grid-row: 3;
+}
+
+.twelve {
+    background-image: url('images/hair12.jpg');
+    -ms-grid-column: 4;
+    -ms-grid-row: 3;
+}
+
+.vertical {
+    grid-row-end: span 2;
+}
+
+#social {
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    background-color: transparent;
+    grid-column: 2 / span 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    grid-row: 3;
+    -ms-grid-row: 3;
+    z-index: 25;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    justify-self: center;
+    -webkit-animation: fadeIn ease-in 1s,
+               slideUp ease-in 1s;
+            animation: fadeIn ease-in 1s,
+               slideUp ease-in 1s;
+    
+}
+
+#mission {
+    height: 400px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+}
+
+#mission h1 {
+    width: 30%;
+    padding-left: 25px;
+}
+
+#mission p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    padding: 25px;
+    width: 70%;
+}
+
+#mission a {
+    color: #603658;
+}
+
+#hours {
+    height: 600px;
+    background: url('images/hair13.jpg') center center;
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+#hours h1 {
+    font-size: 5rem;
+    padding-top: 35px;
+}
+
+#hours p {
+    font-size: 2rem;
+}
+
+button {
+    background-color: #603658;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #DA70D6;
+}
+
+button:active {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+}
+
+footer {
+    background-color: #603658;
+    color: #fff;
+    height: auto;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    font-family: 'Raleway', sans-serif;
+}
+
+.credits a {
+    text-decoration: none;
+    color: white;    
+}
+
+.credits a:hover {
+    text-decoration: underline;
+}
+
+
+@-webkit-keyframes 
+    fadeIn { 
+        from { 
+            opacity:0; 
+        } 
+        to { 
+            opacity:1; 
+        } 
+    }
+
+
+@keyframes 
+    fadeIn { 
+        from { 
+            opacity:0; 
+        } 
+        to { 
+            opacity:1; 
+        } 
+    }
+
+    @-webkit-keyframes
+        slideUp {
+            0% {
+                -webkit-transform: translateY(50px);
+                        transform: translateY(50px);
+            }
+            100% {
+                -webkit-transform: translateY(-20px);
+                        transform: translateY(-20px);
+            }
+        }
+
+    @keyframes
+        slideUp {
+            0% {
+                -webkit-transform: translateY(-50px);
+                        transform: translateY(-50px);
+            }
+            100% {
+                -webkit-transform: translateY(0);
+                        transform: translateY(0);
+            }
+        }
+
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+
+    html {
+        font-size: 12px;
+    }
+
+    header {
+        height: 75px;
+    }
+
+    #brand {
+        justify-self: center;
+        text-align: center;
+    }
+
+    .brandH1 {
+        font-size: 2.25rem;
+        letter-spacing: 0;
+    }
+
+    .menuButton {
+        font-size: 3em !important;
+    }
+
+    #banner {
+        text-align: center;
+    }
+
+    #banner::after {
+        font-size: 5rem;
+        grid-row: 1 / span 2;
+        -ms-flex-item-align: center;
+            align-self: center;
+    }
+
+    #social {
+        grid-column: 1 / -1;
+    }
+
+    .social {
+        height: 30px;
+        width: auto;
+    }
+
+    #hiddenMenu {
+        top: 75px;
+    }
+
+    .navItem {
+        font-size: 2.5rem;
+    }
+    
+    .openMenu {
+        width: 75% !important;
+    }
+
+    #mission {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        text-align: center;
+        height: auto;
+    }
+
+    #mission h1 {
+        width: 75%;
+        padding: 0;
+        margin-top: 50px;
+    }
+
+    #mission p {
+        font-size: 1.5rem;
+    }
+
+    #hours {
+        height: auto;
+    }
+
+    #hours h1 {
+        font-size: 3rem;
+    }
+
+    #hours p {
+        font-size: 1.5rem;
+        margin: 20px;
+    }
+
+    button {
+        width: 75%;
+        font-size: 1rem;
+        margin-bottom: 75px;
+    }
+
+    footer {
+        font-size: 0.75rem;
+        width: 100%;
+    }
+
+
+
+}
+
+@media screen and (max-width: 450px) {
+    #banner {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .item {
+        display: none;
+    }
+    
+    .two {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+
+    #banner::after {
+        margin-top: 75px;
+        -ms-flex-item-align: start;
+            align-self: start;
+        
+    }
+
+    #social {
+        margin-top: 400px;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1250px) {
+    #banner {
+        text-align: center;
+    }
+
+    #banner::after {
+        font-size: 5rem;
+        grid-row: 1 / span 2;
+        -ms-flex-item-align: center;
+            align-self: center;
+    }
+
+    #social {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+}
